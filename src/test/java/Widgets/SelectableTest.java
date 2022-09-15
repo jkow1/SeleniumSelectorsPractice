@@ -13,7 +13,7 @@ import java.time.Duration;
 import java.util.List;
 import java.util.Random;
 
-public class Selectable extends TestBase {
+public class SelectableTest extends TestBase {
 
     @BeforeEach
     public void getWebsite() {

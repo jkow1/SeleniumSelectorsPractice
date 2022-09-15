@@ -5,16 +5,16 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 import java.time.Duration;
 
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
-public class Tooltop extends TestBase {
+
+public class TooltipTest extends TestBase {
 
     @BeforeEach
     public void getWebsite() {
@@ -24,7 +24,6 @@ public class Tooltop extends TestBase {
     @Test
     @Tag("Regression")
     public void tooltipSuccessfulTest() {
-        WebElement input = driver.findElement(By.cssSelector("#age"));
         (new Actions(driver)).moveToElement(driver.findElement(By.cssSelector("#age"))).click().build().perform();
         WebDriverWait waitForTooltip = new WebDriverWait(driver, Duration.ofSeconds(5));
         String tooltipTex = waitForTooltip.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ui-tooltip"))).getText();

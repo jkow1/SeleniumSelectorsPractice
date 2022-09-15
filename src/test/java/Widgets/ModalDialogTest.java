@@ -15,10 +15,10 @@ import java.util.List;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
-public class ModalDialog extends TestBase {
+public class ModalDialogTest extends TestBase {
 
     @BeforeEach
-    private void getWebsite() {
+    public void getWebsite() {
         driver.get("https://seleniumui.moderntester.pl/modal-dialog.php");
     }
 

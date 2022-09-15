@@ -9,7 +9,7 @@ import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
-public class Draggable extends TestBase {
+public class DraggableTest extends TestBase {
 
     @BeforeEach
     public void getWebsite() {

@@ -10,10 +10,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class Menu extends TestBase {
+public class MenuTest extends TestBase {
 
     @BeforeEach
-    private void getWebsite() {
+    public void getWebsite() {
         driver.get("https://seleniumui.moderntester.pl/menu-item.php");
     }
 
@@ -25,10 +25,6 @@ public class Menu extends TestBase {
         wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#ui-id-13")));
         driver.findElement(By.cssSelector("#ui-id-13")).click();
         wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#ui-id-16")));
-        try {
-            driver.findElement(By.cssSelector("#ui-id-16")).click();
-        } catch (Exception e) {
-            throw e;
-        }
+        driver.findElement(By.cssSelector("#ui-id-16")).click();
     }
 }

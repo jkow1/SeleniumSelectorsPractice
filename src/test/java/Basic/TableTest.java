@@ -12,7 +12,7 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Table extends TestBase {
+public class TableTest extends TestBase {
 
     @BeforeEach
     public void getWebsite() {
@@ -25,8 +25,7 @@ public class Table extends TestBase {
     public void getTableElementsSuccessfulTest(String state, String height) {
         List<WebElement> list = driver.findElements(By.cssSelector("tbody tr"))
                 .stream().filter(webElement -> webElement.findElements(By.cssSelector("td")).get(2).getText().equals(state)
-                        && Integer.parseInt(webElement.findElements(By.cssSelector("td")).get(3).getText()) > Integer.parseInt(height))
-                .collect(Collectors.toList());
+                        && Integer.parseInt(webElement.findElements(By.cssSelector("td")).get(3).getText()) > Integer.parseInt(height)).toList();
         list.stream()
                 .forEach(webElement -> System.out.println("Peak \"" +
                         webElement.findElements(By.cssSelector("td")).get(0).getText() +

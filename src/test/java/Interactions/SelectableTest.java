@@ -14,7 +14,7 @@ import java.util.List;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
-public class Selectable extends TestBase {
+public class SelectableTest extends TestBase {
 
     @BeforeEach
     public void getWebsite() {

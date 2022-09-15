@@ -12,7 +12,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
-public class Accordion extends TestBase {
+public class AccordionTest extends TestBase {
 
     @BeforeEach
     public void getWebsite() {

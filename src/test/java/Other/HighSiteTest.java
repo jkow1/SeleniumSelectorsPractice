@@ -15,7 +15,7 @@ import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
 
-public class HighSite extends TestBase {
+public class HighSiteTest extends TestBase {
 
     @BeforeEach
     public void getWebsite() {
@@ -29,9 +29,7 @@ public class HighSite extends TestBase {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
         wait.until(driver -> {
                     scrollDown();
-                    if (driver.findElement(By.cssSelector("#scroll-button")).isDisplayed())
-                        return true;
-                    return false;
+                    return driver.findElement(By.cssSelector("#scroll-button")).isDisplayed();
                 }
         );
         File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);

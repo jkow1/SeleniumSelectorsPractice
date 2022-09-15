@@ -2,14 +2,13 @@ package Basic;
 
 import Base.TestBase;
 import Logback.BasicLogger;
-import ch.qos.logback.core.joran.conditional.ThenAction;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
-import org.openqa.selenium.*;
-import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -47,7 +46,7 @@ public class FormTest extends TestBase {
         driver.findElement(By.cssSelector("#chooseFile")).sendKeys(inputFile.getAbsolutePath());
         driver.findElement(By.cssSelector(".btn-primary")).click();
         String actualResult = driver.findElement(By.cssSelector("#validator-message")).getText();
-        BasicLogger.logAssertedValues(logger,expectedResult,actualResult);
+        BasicLogger.logAssertedValues(logger, expectedResult, actualResult);
         Assertions.assertThat(actualResult).isEqualTo(expectedResult);
 
     }
@@ -60,7 +59,7 @@ public class FormTest extends TestBase {
         if (select.isMultiple()) {
             select.selectByValue("switch-commands");
             select.selectByValue("wait-commands");
-        }else{
+        } else {
             System.out.println("Select is not multiple" + select.getClass().getName());
         }
     }

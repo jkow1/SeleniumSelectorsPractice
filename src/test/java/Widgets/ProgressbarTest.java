@@ -13,7 +13,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 import java.time.Duration;
 
-public class Progressbar extends TestBase {
+public class ProgressbarTest extends TestBase {
 
     @BeforeEach
     public void getWebsite() {

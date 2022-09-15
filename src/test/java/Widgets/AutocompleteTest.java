@@ -11,7 +11,7 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
-public class Autocomplete extends TestBase {
+public class AutocompleteTest extends TestBase {
 
     @BeforeEach
     public void getWebsite() {

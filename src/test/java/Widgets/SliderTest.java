@@ -10,7 +10,7 @@ import org.openqa.selenium.WebElement;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
-public class Slider extends TestBase {
+public class SliderTest extends TestBase {
 
     @BeforeEach
     public void getWebsite() {
@@ -19,7 +19,7 @@ public class Slider extends TestBase {
 
     @Test
     @Tag("Regression")
-    public void sliderSuccessTest(){
+    public void sliderSuccessTest() {
         //driver.findElement(By.cssSelector("#custom-handle")).sendKeys(Keys.ARROW_RIGHT);
         moveSlider(50);
         assertThat(driver.findElement(By.cssSelector("#custom-handle")).getText().equals("50"));
@@ -37,15 +37,15 @@ public class Slider extends TestBase {
         assertThat(driver.findElement(By.cssSelector("#custom-handle")).getText().equals("80"));
     }
 
-    private void moveSlider(int x){
+    private void moveSlider(int x) {
         WebElement sliderElement = driver.findElement(By.cssSelector("#custom-handle"));
 
-        for (int i = 0; i<x ;i++){
+        for (int i = 0; i < x; i++) {
             sliderElement.sendKeys(Keys.ARROW_RIGHT);
         }
     }
 
-    private void resetSlider(){
+    private void resetSlider() {
         driver.navigate().refresh();
     }
 

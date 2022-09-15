@@ -1,7 +1,6 @@
 package Interactions;
 
 import Base.TestBase;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayNameGeneration;
 import org.junit.jupiter.api.DisplayNameGenerator;
@@ -19,7 +18,7 @@ import java.util.List;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
-public class Sortable extends TestBase {
+public class SortableTest extends TestBase {
 
     @BeforeEach
     public void getWebsite() {

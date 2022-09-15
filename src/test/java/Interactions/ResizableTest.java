@@ -10,7 +10,7 @@ import org.openqa.selenium.interactions.Actions;
 
 import java.util.Arrays;
 
-public class Resizable extends TestBase {
+public class ResizableTest extends TestBase {
 
     @BeforeEach
     public void getWebsite() {
@@ -29,9 +29,9 @@ public class Resizable extends TestBase {
         Actions resizeAction = new Actions(driver);
         resizeAction.clickAndHold(resizableElementCorner).moveByOffset(10 + (resizableBorder + resizablePadding) * 2, 0).release().perform();
         mySleep(1);
-        resizeAction.clickAndHold(resizableElementCorner).moveByOffset(0, 10  + (resizableBorder + resizablePadding) * 2).release().perform();
+        resizeAction.clickAndHold(resizableElementCorner).moveByOffset(0, 10 + (resizableBorder + resizablePadding) * 2).release().perform();
         mySleep(1);
-        resizeAction.clickAndHold(resizableElementCorner).moveByOffset(10  + (resizableBorder + resizablePadding) * 2,  10 + (resizableBorder + resizablePadding) * 2).release().perform();
+        resizeAction.clickAndHold(resizableElementCorner).moveByOffset(10 + (resizableBorder + resizablePadding) * 2, 10 + (resizableBorder + resizablePadding) * 2).release().perform();
         mySleep(1);
     }
 

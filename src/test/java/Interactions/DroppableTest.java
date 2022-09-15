@@ -11,7 +11,7 @@ import org.openqa.selenium.interactions.Actions;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
-public class Droppable extends TestBase {
+public class DroppableTest extends TestBase {
 
     @BeforeEach
     public void getWebsite() {

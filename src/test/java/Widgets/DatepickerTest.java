@@ -15,13 +15,16 @@ import org.slf4j.LoggerFactory;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.*;
+import java.time.Duration;
+import java.time.LocalDateTime;
+import java.time.Month;
+import java.time.YearMonth;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 
-public class Datepicker extends TestBase {
+public class DatepickerTest extends TestBase {
 
-    private Logger logger = LoggerFactory.getLogger(Datepicker.class);
+    private Logger logger = LoggerFactory.getLogger(DatepickerTest.class);
 
     @BeforeEach
     public void getWebsite() {
@@ -128,8 +131,8 @@ public class Datepicker extends TestBase {
         String year = getYearFromDate(currentDate);
         Month month = Month.of(Integer.parseInt(getMonthFromDate(currentDate)) - 1);
         YearMonth yearMonth = YearMonth.of(Integer.parseInt(year), month);
-        int day = new Random(System.currentTimeMillis()).nextInt(1,yearMonth.lengthOfMonth());
-        if( day < 10){
+        int day = new Random(System.currentTimeMillis()).nextInt(1, yearMonth.lengthOfMonth());
+        if (day < 10) {
             return convertMonthNameToNumber(month.name()) + "/0" + day + "/" + (Integer.parseInt(year) - 1);
         }
         return convertMonthNameToNumber(month.name()) + "/" + day + "/" + (Integer.parseInt(year));
@@ -139,30 +142,30 @@ public class Datepicker extends TestBase {
         String year = getYearFromDate(currentDate);
         Month month = Month.of((new Random(System.currentTimeMillis())).nextInt(0, 11));
         YearMonth yearMonth = YearMonth.of(Integer.parseInt(year) - 1, month);
-        int day = new Random(System.currentTimeMillis()).nextInt(1,yearMonth.lengthOfMonth());
-        if( day < 10){
+        int day = new Random(System.currentTimeMillis()).nextInt(1, yearMonth.lengthOfMonth());
+        if (day < 10) {
             return convertMonthNameToNumber(month.name()) + "/0" + day + "/" + (Integer.parseInt(year) - 1);
         }
         return convertMonthNameToNumber(month.name()) + "/" + day + "/" + (Integer.parseInt(year) - 1);
     }
 
     private String getCurrentDate() {
-        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("MM/dd/YYYY");
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
         return dateTimeFormatter.format(LocalDateTime.now());
     }
 
     private String getDayFromDate(String dateToConvert) {
-        String split[] = dateToConvert.split("/");
+        String[] split = dateToConvert.split("/");
         return split[1];
     }
 
     private String getMonthFromDate(String dateToConvert) {
-        String split[] = dateToConvert.split("/");
+        String[] split = dateToConvert.split("/");
         return split[0];
     }
 
     private String getYearFromDate(String dateToConvert) {
-        String split[] = dateToConvert.split("/");
+        String[] split = dateToConvert.split("/");
         return split[2];
     }
 
@@ -185,7 +188,7 @@ public class Datepicker extends TestBase {
     }
 
     private String convertMonthNameToNumber(String monthName) {
-        Date date = null;
+        Date date;
         try {
             date = new SimpleDateFormat("MMMM", Locale.ENGLISH).parse(monthName);
         } catch (ParseException e) {

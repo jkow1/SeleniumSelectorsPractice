@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.Select;
 import java.util.List;
 import java.util.Random;
 
-public class Iframe extends TestBase {
+public class IframeTest extends TestBase {
 
     @Test
     @Tag("Regression")
